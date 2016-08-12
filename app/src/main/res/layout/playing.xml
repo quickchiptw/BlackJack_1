@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+  	xmlns:android="http://schemas.android.com/apk/res/android"
+  	android:layout_width="fill_parent"
+  	android:layout_height="fill_parent"
+	android:background = "@drawable/bjtable"
+	android:orientation="horizontal" >
+    
+   	<!--  Container for Action Buttons -->
+   	<RelativeLayout 
+    	android:id="@+id/actionButtons" 
+    	android:layout_width="wrap_content" 
+    	android:layout_height="wrap_content"
+    	android:layout_centerHorizontal="true"
+    	android:layout_alignParentBottom="true" >		
+		<!--  Surrender -->
+    	<Button
+    		android:layout_height="wrap_content"
+    		android:layout_width="70dp"
+    		android:background="@drawable/surrender" 
+    		android:id="@+id/surrenderButton"/>
+    	<!--  Stand -->
+    	<Button
+    		android:layout_height="wrap_content" 
+    		android:layout_width="70dp"
+    		android:background="@drawable/stand" 
+    		android:id="@+id/standButton"
+    		android:layout_toRightOf="@id/surrenderButton"
+    		android:layout_marginLeft="25dp"/>
+    	<!--  Hit -->
+    	<Button 
+    		android:layout_height="wrap_content" 
+    		android:layout_width="70dp"
+    		android:background="@drawable/hit" 
+    		android:id="@+id/hitButton"
+    		android:layout_toRightOf="@id/standButton"
+    		android:layout_marginLeft="25dp"/>
+    	<!--  Double Down -->
+    	<Button 
+    		android:layout_height="wrap_content" 
+    		android:layout_width="70dp"
+    		android:background="@drawable/dd" 
+    		android:id="@+id/ddButton"
+    		android:layout_toRightOf="@id/hitButton"
+    		android:layout_marginLeft="25dp"/>
+    	<!--  Split -->
+    	<Button 
+    		android:layout_height="wrap_content" 
+    		android:layout_width="70dp"
+    		android:background="@drawable/split" 
+    		android:id="@+id/splitButton"
+    		android:layout_toRightOf="@id/ddButton"
+    		android:layout_marginLeft="25dp"/>	
+	</RelativeLayout>
+	
+	<!--  Play Again Button -->
+    <Button
+    	android:layout_height="wrap_content" 
+    	android:layout_width="wrap_content" 
+    	android:layout_centerHorizontal="true"
+    	android:layout_alignParentBottom="true" 
+    	android:id="@+id/playAgainButton"
+    	android:text="Play Again?"
+    	android:visibility="gone"
+		android:textSize="20sp"
+		android:textColor="#fe0202" />
+    	
+    <!--  Container for Dealer's Hand -->
+    <LinearLayout
+    	android:id="@+id/dealerHand"
+    	android:layout_width="wrap_content" 
+   		android:layout_height="wrap_content"
+   		android:layout_centerInParent="true"
+   		android:paddingLeft="25dp">
+    	<LinearLayout 
+    		android:layout_width="wrap_content" 
+    		android:layout_height="wrap_content"/>
+    	<TextView 
+			android:layout_width="wrap_content"	
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="10dp"
+			android:textColor="#ffffff"
+			android:textSize="16sp" />
+    </LinearLayout>
+    	
+     <!--  Container for Player's main Hand -->
+    <LinearLayout
+  		android:id="@+id/playerHand1"
+   		android:layout_width="wrap_content"
+   		android:layout_height="wrap_content"
+   		android:layout_alignParentBottom="true"
+   		android:layout_alignBaseline="@id/dealerHand"
+    	android:layout_centerHorizontal="true"
+      	android:layout_marginBottom="65dp"
+      	android:paddingLeft="25dp">
+    	<LinearLayout 	 
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"/>
+    	<TextView 
+			android:layout_width="wrap_content"	
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="10dp"
+			android:textColor="#ffffff"
+			android:textSize="16sp" />
+  	</LinearLayout>	
+  	
+  	<!--  Container for one of possible Split hands -->
+  	<LinearLayout
+  		android:id="@+id/playerHand2"
+    	android:layout_width="wrap_content"
+   		android:layout_height="wrap_content"
+   		android:layout_toLeftOf="@id/playerHand1"
+   		android:layout_above="@id/playerHand1">
+ 	
+      	<LinearLayout 	 
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:gravity="right"/>
+    	<TextView 
+			android:layout_width="wrap_content"	
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="10dp"
+			android:textColor="#ffffff"
+			android:textSize="16sp" />
+   	</LinearLayout>
+   	
+   	<!--  Container for another of possible Split hands -->
+   	<LinearLayout
+  		android:id="@+id/playerHand3"
+    	android:layout_width="wrap_content"
+   		android:layout_height="wrap_content"
+   		android:layout_toRightOf="@id/playerHand1"
+   		android:layout_above="@id/playerHand1">
+ 		<LinearLayout 	 
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"/>
+ 		<TextView 
+			android:layout_width="wrap_content"	
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="10dp"
+			android:textColor="#ffffff"
+			android:textSize="16sp" />
+   	</LinearLayout>
+   	
+   	<!--  Container for Player's result (win/lose) -->
+   	<TextView 
+   		android:id="@+id/playerResult"
+		android:layout_width="wrap_content"	
+        android:layout_height="wrap_content"
+       	android:layout_alignParentRight="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="14dp"
+		android:textSize="20sp"
+		android:textColor="#fb01ab" />
+     	
+     <!--  Container for Player's wallet balance -->
+	<TableRow
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_alignParentStart="true"></TableRow>
+
+	<LinearLayout
+    	android:id="@+id/playerCash"
+		android:layout_width="wrap_content"	
+        android:layout_height="wrap_content"
+      	android:layout_alignParentLeft="true"
+      	android:layout_marginTop="40dp"
+      	android:layout_marginLeft="42dp"
+      	android:orientation="vertical">
+     	<TextView
+			android:layout_width="wrap_content"	
+        	android:layout_height="wrap_content"
+     		android:text="Your Cash:"
+			android:textColor="#ffffff"
+			android:textSize="15sp"
+			android:textIsSelectable="true" />
+     	<TextView
+			android:layout_width="wrap_content"	
+        	android:layout_height="wrap_content"
+			android:textColor="#ffffff"
+			android:textSize="16sp" />
+     </LinearLayout>
+     
+      <!--  Container for Dealer's wallet balance -->	
+     <LinearLayout
+    	android:id="@+id/dealerCash"
+		android:layout_width="wrap_content"	
+        android:layout_height="wrap_content"
+		 android:orientation="vertical"
+		 android:layout_alignTop="@+id/playerCash"
+		 android:layout_centerHorizontal="true"
+		 android:layout_alignParentRight="true"
+		 android:layout_marginRight="30dp">
+		 <TextView
+			 android:layout_width="wrap_content"
+			 android:layout_height="wrap_content"
+			 android:text="Pot:"
+			 android:textColor="#ffffff"
+			 android:textSize="16sp"
+			 android:layout_alignTop="@+id/playerCash"
+			 android:layout_alignEnd="@+id/dealerHand" />
+
+		 <TextView
+			android:layout_width="wrap_content"	
+        	android:layout_height="wrap_content"
+			android:textSize="16sp"
+			android:textColor="#ffffff" />
+     </LinearLayout>
+
+
+
+</RelativeLayout>

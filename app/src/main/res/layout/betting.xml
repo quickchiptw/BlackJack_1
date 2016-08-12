@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+  	xmlns:android="http://schemas.android.com/apk/res/android"
+  	android:layout_width="match_parent"
+  	android:layout_height="wrap_content"
+	android:background = "@drawable/bjtable"
+	android:orientation="horizontal" >
+    
+    <!--  Container for Bet Buttons -->
+   	<RelativeLayout 
+   		android:id="@+id/betButtons" 
+   		android:layout_width="wrap_content" 
+   		android:layout_height="wrap_content"
+   		android:layout_centerHorizontal="true"
+    	android:layout_alignParentBottom="true">
+    		
+    	<!-- Deal cards (done selecting chips) -->
+    	<Button
+    		android:layout_height="wrap_content" 
+    		android:layout_width="70dp"
+    		android:background="@drawable/deal" 
+    		android:id="@+id/dealButton"
+			android:layout_alignParentStart="true" />
+    	<!-- Rebet last bet -->
+    	<Button 
+   			android:layout_height="wrap_content" 
+   			android:layout_width="70dp"
+   			android:background="@drawable/rebet" 
+   			android:id="@+id/rebetButton"
+   	    	android:layout_toRightOf="@id/dealButton"
+    		android:layout_marginLeft="25dp"/>
+   		<!-- Clear bet -->
+   		<Button
+   			android:layout_height="wrap_content" 
+    		android:layout_width="70dp"
+    		android:background="@drawable/clear" 
+   			android:id="@+id/clearButton"
+  			android:layout_toRightOf="@id/rebetButton"
+   			android:layout_marginLeft="25dp"
+			android:layout_alignParentEnd="false" />
+    </RelativeLayout>
+    	   
+   	<!--  Container for Chip Buttons-->
+    <RelativeLayout 
+    	android:id="@+id/chipButtons" 
+    	android:layout_width="wrap_content" 
+    	android:layout_height="wrap_content"
+   		android:layout_alignParentRight="true"
+   		android:layout_centerVertical="true"
+   		android:layout_marginRight="10dp">
+    
+    	<!-- 5 -->
+    	<Button 
+   			android:layout_height="wrap_content" 
+   			android:layout_width="60dp"
+    		android:background="@drawable/m5" 
+    		android:id="@+id/chip5"
+    		android:paddingLeft="15dp"
+    		android:paddingRight="15dp"
+    		android:paddingTop="5dp"
+    		android:paddingBottom="5dp"/>
+    	<!-- 25 -->
+    	<Button 
+    		android:layout_height="wrap_content" 
+    		android:layout_width="60dp"
+    		android:background="@drawable/m25" 
+  			android:id="@+id/chip25"
+   			android:layout_below="@id/chip5"
+   	    	android:layout_marginTop="15dp"
+   	    	android:paddingLeft="15dp"
+    		android:paddingRight="15dp"
+    		android:paddingTop="5dp"
+    		android:paddingBottom="5dp"/>
+    	<!-- 100 -->
+    	<Button 
+    		android:layout_height="wrap_content" 
+    		android:layout_width="60dp"
+   			android:background="@drawable/m100" 
+   			android:id="@+id/chip100"
+    		android:layout_below="@id/chip25"
+   			android:layout_marginTop="15dp"
+   			android:paddingLeft="15dp"
+    		android:paddingRight="15dp"
+    		android:paddingTop="5dp"
+    		android:paddingBottom="5dp"/>
+    	<!-- 500 -->
+    	<Button
+    		android:layout_height="wrap_content" 
+   			android:layout_width="60dp"
+   			android:background="@drawable/m500" 
+   			android:id="@+id/chip500"
+   			android:layout_below="@id/chip100"
+     		android:layout_marginTop="15dp"
+     		android:paddingLeft="15dp"
+    		android:paddingRight="15dp"
+    		android:paddingTop="5dp"
+    		android:paddingBottom="5dp"/>
+     		
+   	</RelativeLayout>
+   	
+   	<!--  Container for Player's initial bet amount -->
+   	<TextView 
+   		android:id="@+id/playerBet"
+		android:layout_width="wrap_content"	
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/betButtons"
+        android:layout_marginBottom="28dp"
+		android:textColor="#ffffff"
+		android:textSize="20sp" />
+    
+	 <!--  Container for Player's wallet balance -->	
+     <LinearLayout
+    	android:id="@+id/playerCash"
+		android:layout_width="wrap_content"	
+        android:layout_height="wrap_content"
+      	android:layout_alignParentLeft="true"
+      	android:layout_marginTop="40dp"
+      	android:layout_marginLeft="42dp"
+      	android:orientation="vertical">
+     	<TextView
+			android:layout_width="wrap_content"	
+        	android:layout_height="wrap_content"
+     		android:text="Your Cash:"
+			android:textColor="#ffffff"
+			android:textSize="15sp" />
+     	<TextView
+			android:layout_width="wrap_content"	
+        	android:layout_height="wrap_content"
+			android:textSize="16sp"
+			android:textColor="#ffffff" />
+
+     </LinearLayout>
+     
+     <!--  Container for Dealer's wallet balance -->	
+     <LinearLayout
+    	android:id="@+id/dealerCash"
+		android:layout_width="wrap_content"	
+        android:layout_height="wrap_content"
+		 android:orientation="vertical"
+		 android:layout_alignTop="@+id/playerCash"
+		 android:layout_marginRight="100dp"
+		 android:layout_alignParentRight="true">
+		 <TextView
+			 android:layout_width="wrap_content"
+			 android:layout_height="wrap_content"
+			 android:text="Pot:"
+			 android:textColor="#ffffff"
+			 android:textSize="16sp"
+			 android:layout_alignTop="@+id/playerCash"
+			 android:layout_centerHorizontal="true" />
+
+		 <TextView
+			android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+			android:textSize="16sp"
+			android:textColor="#ffffff" />
+     </LinearLayout>
+
+
+
+</RelativeLayout>
